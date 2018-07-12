@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 import static cs.ltd.Common.Constants.BASE_URL;
 
 public class DriverFactory {
-    public static WebDriver getDriver() {
+    /*public static WebDriver getDriver() {
         WebDriver driver = null;
         String name = System.getProperty("driver");
         if ("firefox".equals(name)) {
@@ -25,5 +25,15 @@ public class DriverFactory {
         driver.get(BASE_URL);
         return driver;
 
+    }*/
+    public static WebDriver getDriver() {
+        WebDriver driver = null;
+        System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
+        driver = new ChromeDriver();
+
+        driver.manage().timeouts().implicitlyWait(10000, TimeUnit.SECONDS);
+        driver.manage().window().maximize();
+        driver.get(BASE_URL);
+        return driver;
     }
 }
