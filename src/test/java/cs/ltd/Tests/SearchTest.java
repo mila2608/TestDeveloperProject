@@ -11,7 +11,8 @@ public class SearchTest {
     public void search() throws IOException {
         app.homePage.searchText();
         app.homePage.resultList();
-        app.homePage.compareToFiles();
+        //   app.homePage.compareToFiles();
+        app.homePage.compareToFiles2();
    //     app.homePage.closeApp();
 
     }
